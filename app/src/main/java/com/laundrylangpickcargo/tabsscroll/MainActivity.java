@@ -31,7 +31,7 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        hsvTabs = (HorizontalScrollView) findViewById(R.id.hsv_tabS);
+        hsvTabs = (HorizontalScrollView) findViewById(R.id.hsv_tabs);
         tabs = (LinearLayout) findViewById(R.id.ll_tabs);
         vpContent = (ViewPager) findViewById(R.id.vp_content);
 
@@ -43,7 +43,7 @@ public class MainActivity extends FragmentActivity {
         for (int i = 0; i < tabels.size(); i++) {
             TabFragment fragment = new TabFragment();
             Bundle bundle = new Bundle();
-            bundle.putInt("position", i);
+            bundle.putString("tabel", tabels.get(i));
             fragment.setArguments(bundle);
             fragments.add(fragment);
         }
